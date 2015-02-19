@@ -143,7 +143,7 @@ namespace Glimpse.Core.Framework
         {
             lock (queueLock)
             {
-                return GlimpseRequests.Take(count).ToList();
+                return GlimpseRequests.Reverse().Take(count).ToList();
             }
         }
 
