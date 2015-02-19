@@ -2715,7 +2715,7 @@ glimpse.tab = (function($, pubsub, data) {
                 detailBody.empty();
             }
             
-            for (var x = context.resultCount; x < clientData.length; x++) {
+            for (var x = (clientData.length - context.resultCount - 1); x >= 0 ; x--) {
                 var item = clientData[x];
                 html = '<tr class="glimpse-row" data-requestId="' + item.requestId + '"><td><div class="glimpse-ellipsis" title="' + item.uri + '">' + util.htmlEncode(item.uri) + '</div></td><td>' + item.method + '</td><td>' + item.statusCode + '</td><td class="mono" style="text-align:right">' + item.duration + '<span class="glimpse-soft"> ms</span></td><td>' + item.dateTime + '</td><td>' + item.isAjax + '</td><td><a href="javascript:void(0)" class="glimpse-history-link" data-requestId="' + item.requestId + '">Inspect</a></td></tr>' + html;
             }
